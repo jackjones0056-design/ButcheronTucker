@@ -1,17 +1,26 @@
 # The Butcher on Tucker
 
-Portfolio concept rebuild for The Butcher on Tucker in Vancleave, Mississippi.
+Portfolio / production brochure site for The Butcher on Tucker in Vancleave, Mississippi.
+
+**Live:** https://jackjones0056-design.github.io/ButcheronTucker/
 
 ## Current build
-- 2026 responsive single-page website
-- Veteran-Owned & Operated positioning
-- 8-Time 1st Place Award Winner credibility section
-- Sun Herald Best of Coastal MS — Best Butcher, 2023–2026
-- WXXV Viewers’ Choice — Best Butcher, 2022–2025
-- 98% recommend · 81 Facebook reviews
-- Free-use Pexels concept photography with embedded fallbacks
-- Responsive mobile navigation and call-ahead CTAs
-- Prepared meals, catering, fresh-this-week, and visit sections
+- Responsive single-page site (static HTML/CSS/JS)
+- Real NAP, hours, call-ahead CTAs, mobile nav + sticky call bar
+- Awards / social proof sections
+- Google Maps embed on Visit
+- Schema.org `ButcherShop` + opening hours
+- Open Graph / Twitter cards + canonical URL
+- Lazy-loaded images below the hero
 
-## Notes
-The photography is temporary portfolio imagery and should be replaced with original shop photography before production launch. The logo is currently embedded in `index.html` from the available Facebook reference image; replace it with the original brand asset when available.
+## Still before final shop launch
+- Replace Pexels concept photography with original shop photos (see `PHOTO-SOURCES.md`)
+- Replace `logo.svg` with the original brand asset when available
+- Optional: custom domain + Formspree catering form
+
+## Local preview
+Open `index.html` in a browser, or:
+
+```bash
+python3 -m http.server 8080
+```
