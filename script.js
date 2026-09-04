@@ -1,37 +1,32 @@
-const header=document.querySelector('#site-header');
-const toggle=document.querySelector('.nav-toggle');
-const nav=document.querySelector('#primary-nav');
-
-function setNav(open){
-  nav.classList.toggle('open',open);
-  toggle.setAttribute('aria-expanded',String(open));
-  toggle.setAttribute('aria-label',open?'Close navigation':'Open navigation');
-}
-
-toggle.addEventListener('click',()=>setNav(!nav.classList.contains('open')));
-nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>setNav(false)));
-document.addEventListener('keydown',event=>{if(event.key==='Escape')setNav(false)});
-document.addEventListener('click',event=>{if(nav.classList.contains('open')&&!header.contains(event.target))setNav(false)});
-
-const tabs=[...document.querySelectorAll('[role="tab"]')];
-const panels=[...document.querySelectorAll('[role="tabpanel"]')];
-function activateTab(tab,focus=true){
-  const target=tab.dataset.tab;
-  tabs.forEach(item=>item.setAttribute('aria-selected',String(item===tab)));
-  panels.forEach(panel=>{const active=panel.dataset.panel===target;panel.hidden=!active;panel.classList.toggle('active',active)});
-  if(focus) tab.focus();
-}
-
-tabs.forEach((tab,index)=>{
-  tab.addEventListener('click',()=>activateTab(tab,false));
-  tab.addEventListener('keydown',event=>{
-    let next=index;
-    if(event.key==='ArrowRight')next=(index+1)%tabs.length;
-    else if(event.key==='ArrowLeft')next=(index-1+tabs.length)%tabs.length;
-    else if(event.key==='Home')next=0;
-    else if(event.key==='End')next=tabs.length-1;
-    else return;
-    event.preventDefault();
-    activateTab(tabs[next]);
+const menuToggle = document.querySelector('.menu-toggle');
+const navlinks = document.querySelector('.navlinks');
+if(menuToggle && navlinks){
+  menuToggle.addEventListener('click',()=>{
+    const open = navlinks.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded',String(open));
   });
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape'){ navlinks.classList.remove('open'); menuToggle.setAttribute('aria-expanded','false'); }});
+  navlinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navlinks.classList.remove('open');menuToggle.setAttribute('aria-expanded','false')}));
+}
+document.querySelectorAll('.navdrop>button').forEach(btn=>{
+  btn.addEventListener('click',()=>btn.parentElement.classList.toggle('open'));
 });
+const cateringForm = document.querySelector('#catering-form');
+if(cateringForm){
+  cateringForm.addEventListener('submit',e=>{
+    e.preventDefault();
+    const f = new FormData(cateringForm);
+    const lines = [
+      'Catering request from website','',
+      `Name: ${f.get('name')||''}`,
+      `Email: ${f.get('email')||''}`,
+      `Phone: ${f.get('phone')||''}`,
+      `Event date: ${f.get('date')||''}`,
+      `Head count: ${f.get('count')||''}`,
+      `Fulfillment: ${f.get('fulfillment')||''}`,
+      `Address: ${f.get('address')||''}`,'',
+      `Notes: ${f.get('notes')||''}`
+    ];
+    location.href=`mailto:thebutcherontucker@gmail.com?subject=${encodeURIComponent('Catering Inquiry')}&body=${encodeURIComponent(lines.join('\n'))}`;
+  });
+}
