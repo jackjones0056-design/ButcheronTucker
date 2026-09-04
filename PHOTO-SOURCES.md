@@ -16,3 +16,6 @@ Real shop imagery added for the brochure site. Facebook’s public page was logi
 | `images/10-steak-cuts.jpg` | Steak cuts | Facebook |
 
 If the shop provides higher-res originals, replace these files in `images/` and keep the same filenames.
+
+## Processing
+Replaced thin Yelp `l.jpg` thumbs with `o.jpg` originals where available, then 2× Lanczos upscale + light sharpen/contrast (ImageMagick) for web display.
