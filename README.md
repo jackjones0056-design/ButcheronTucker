@@ -1,26 +1,24 @@
-# The Butcher on Tucker
+# The Butcher on Tucker — Current-Site Layout Refresh
 
-Portfolio / production brochure site for The Butcher on Tucker in Vancleave, Mississippi.
+This build intentionally mirrors the information architecture and page flow of the current Wix site:
+Home, About Us, Products, Catering, Google Reviews / Leave a Review, Contact, and Press.
+
+Visual direction: preserve the familiar cream/teal/brown identity while modernizing typography, spacing, responsiveness, accessibility, navigation, and content hierarchy.
 
 **Live:** https://jackjones0056-design.github.io/ButcheronTucker/
 
-## Current build
-- Responsive single-page site (static HTML/CSS/JS)
-- Real NAP, hours, call-ahead CTAs, mobile nav + sticky call bar
-- Awards / social proof sections
-- Google Maps embed on Visit
-- Schema.org `ButcherShop` + opening hours
-- Open Graph / Twitter cards + canonical URL
-- Lazy-loaded images below the hero
-- Shop photos (Yelp + Facebook) self-hosted under `images/`
+## Pages
+- `index.html` — Home
+- `about-us.html` — About Us
+- `products.html` — current product categories and product lists
+- `catering.html` — catering flow, menu categories and inquiry form
+- `contact.html` — contact information, hours and map
+- `press.html` — awards and press mentions
 
-## Still before final shop launch
-- Optional: swap in higher-res originals from the shop (see `PHOTO-SOURCES.md`)
-- Replace `logo.svg` with the original brand asset when available
-- Optional: custom domain + Formspree catering form
+Existing `/images` and `logo.svg` from the repository are reused across the refreshed site.
 
 ## Local preview
-Open `index.html` in a browser, or:
+Run a small local server so page-to-page navigation behaves normally:
 
 ```bash
 python3 -m http.server 8080
