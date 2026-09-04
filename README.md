@@ -1,7 +1,14 @@
-# The Butcher on Tucker — Current Wix Layout, Updated Aesthetic
+# The Butcher on Tucker — 1:1 Structural Refresh
 
-This build intentionally follows the current live Wix site's information architecture and section order as closely as possible while modernizing typography, spacing, responsiveness, and accessibility.
+This version intentionally mirrors the live Wix site information architecture and section sequence. It does not add new homepage sections or change the product/catering organization.
 
-Navigation: Home, About Us, Products, Catering, Google Reviews / Leave a Review, Contact, Press.
+Active pages:
+- Home
+- About Us
+- Products
+- Catering
+- Google Reviews / Leave a Review (external links)
+- Contact
+- Press
 
-All meat/product photography has been removed and replaced with neutral labeled placeholders. The owner can swap real photography into those slots later without changing the layout.
+All content photography has been replaced with branded placeholders. The logo remains. The aesthetic layer is modernized through typography, spacing, responsive behavior, surfaces and color refinement.
