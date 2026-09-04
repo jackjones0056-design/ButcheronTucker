@@ -12,9 +12,10 @@ Portfolio / production brochure site for The Butcher on Tucker in Vancleave, Mis
 - Schema.org `ButcherShop` + opening hours
 - Open Graph / Twitter cards + canonical URL
 - Lazy-loaded images below the hero
+- Shop photos (Yelp + Facebook) self-hosted under `images/`
 
 ## Still before final shop launch
-- Replace Pexels concept photography with original shop photos (see `PHOTO-SOURCES.md`)
+- Optional: swap in higher-res originals from the shop (see `PHOTO-SOURCES.md`)
 - Replace `logo.svg` with the original brand asset when available
 - Optional: custom domain + Formspree catering form
 
